@@ -103,13 +103,3 @@ const server_play= () => {
   container2.style.display = 'block'
 }
 
-// câu 4 
-const show = document.getElementById('show')
-const full_img = document.getElementsByClassName('full-img')[0]
-show_img = (a) => {
-    full_img.src = `img/full/${a.alt}.jpg`
-    show.classList.add('open')
-} 
-show.onclick = () => {
-    show.classList.remove('open')
-}
