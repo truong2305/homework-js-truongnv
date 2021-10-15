@@ -102,4 +102,3 @@ const server_play= () => {
   container1.style.display = 'none'
   container2.style.display = 'block'
 }
-
