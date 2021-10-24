@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <section>
+            <button v-for="btn of btns" @click="scroll(btn)">{{ btn }}</button>
+          </section>
+          <section id="gallery" class="gallery">
+            <div class="img-container" v-for="(img, index) of imgs" :key="index" @click="open">
+              <img :src="'./img/small/'+img" :alt="++index" />
+            </div>
+          </section>
+          <p id="student">student</p>
+          <p id="book">book</p>
+          <p id="switch" @click='switchStyle'>switch</p>
+          <div class="modal" id="modal-1" @click="remove">
+            <img src="img/full/1.jpg" alt="" class="full-img" id="full-img" />
+          </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
