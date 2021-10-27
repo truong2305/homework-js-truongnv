@@ -13,15 +13,15 @@
             <button v-for="btn of btns" @click="scroll(btn)">{{ btn }}</button>
           </section>
           <section id="gallery" class="gallery">
-            <div class="img-container" v-for="(img, index) of imgs" :key="index" @click="open">
-              <img :src="'./img/small/'+img" :alt="++index" />
+            <div class="img-container" v-for="img of imgs" @click="open(img)">
+              <img :src="'./img/small/'+img"/>
             </div>
           </section>
           <p id="student">student</p>
           <p id="book">book</p>
-          <p id="switch" @click='switchStyle'>switch</p>
-          <div class="modal" id="modal-1" @click="remove">
-            <img src="img/full/1.jpg" alt="" class="full-img" id="full-img" />
+          <p id="switch" :style="{ color : colorStyle, background : bgStyle }" @click="switchStyle">switch</p>
+          <div class="modal" :class="{ open : isOpen }" @click="remove">
+            <img :src="fullImg" alt="" class="full-img" />
           </div>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
